@@ -1,0 +1,26 @@
+﻿
+@model Lab3NET.Models.NumOfBottles;
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Count";
+
+    var i = 0;
+}
+<form action="/Home/Razor">
+
+    <input type="submit" name="Play" value="Play Again!" />
+
+</form>
+
+
+    @for (i = Model.Bottles; i >= 1; i--)
+    {
+        <p>
+            @i green bottlees standing on the wall,<br />
+            @i green bottlees standing on the wall,<br />
+            And if one green bottle should accidentally fall,<br />
+            There'll be @(i-1) green bottles standing on the wall.
+            <br />
+            <br />
+        </p>
+    }

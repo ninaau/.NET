@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+    <header>
+        <h1>Hello you have arrived to my Lab3 web page.</h1>
+        <br />
+        My name is : Naomi Nindorera.
+        <br />
+        <br />
+        <table>
+            <tr>
+                <td><a href="/">Home</a></td>
+                <td><a href="/Home/Razor">Show the song!</a></td>
+                <td><a href="/Home/CreatePerson">Persons</a></td>
+            </tr>
+        </table>
+        <br />
+        <br />
+    </header>
+    <br />
+    <br />
+
+    <div>
+        @RenderBody()
+    </div>
+    <br />
+    <br />
+    <footer>
+       The Layout contains all the the common traits of the web pages .<br />
+        Whatever is in the layout will be present on all the web pages <br />
+        without having to write it again.
+        <br />
+        _Layout,cshtml was put into the shared folder because it's the file<br />
+        that is shared by all the pages. And StyleSheet.css is in the css folder of<br />
+        wwwroot because it is a static file.
+    </footer>
+
+</body>
+</html>

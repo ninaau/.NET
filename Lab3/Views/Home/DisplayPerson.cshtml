@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Lab3NET.Models.Person;
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Count";
+}
+
+<table>
+    <tr>
+        <td>
+            First Name:@Model.fName
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Last Name:@Model.lName
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Age:@Model.age
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Email Address:@Model.email
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Date of Birth:@Model.dofb
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Description:@Model.descrpt
+        </td>
+    </tr>
+    
+</table>
