@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+
+
+    <header>
+
+        <table>
+            <tr>
+                <td><a href="/">Home</a></td>
+                <td><a href="/Students/index">Students</a></td>
+                <td><a href="/Communities/index">Communities</a></td>
+            </tr>
+        </table>
+
+    </header>
+
+    <br />
+    <br />
+    <div>
+        @RenderBody()
+    </div>
+
+</body>
+</html>
