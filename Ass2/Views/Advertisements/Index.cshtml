@@ -1,0 +1,49 @@
+﻿@model Ass2NET.Models.ViewModels.ViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "/Views/shared/_Layout.cshtml";
+}
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Upload New</a><br />
+    <a asp-controller="Communities" asp-action="Index">Back To List</a>
+</p>
+@if (Model.CommunityAdvertisements.Count() > 0)
+{
+    <h3>
+        Members of the Community:
+    </h3>
+    <table class="table">
+        <tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Advertisements.First().FileName)
+            </th>
+            <th>
+                Image
+            </th>
+            <th></th>
+        </tr>
+        </tr>
+        @foreach (var item in Model.CommunityAdvertisements.Select(i => i.Advertisement))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FileName)
+                </td>
+                <td>
+                    <img src="@item.imageUrl" style="max-width: 400px;" />
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.AdvertisementId">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>There are no files to display.</p>
+}

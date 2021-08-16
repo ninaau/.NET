@@ -1,0 +1,43 @@
+﻿@model Ass2NET.Models.ViewModels.ViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+<a asp-action="Index">Back to List</a>
+<h4>Student</h4>
+<hr />
+Full Name:  @Model.Students.First().FullName
+<hr />
+<table>
+    @foreach (var item in Model.communities)
+    {
+
+        <tr>
+            <td>
+                @item.Title
+            </td>
+            @if (Model.CommunityMemberships.Where(i => i.CommunitiesId == item.CommunityId).Count() > 0)
+            {
+
+                <td>
+                    <a asp-action="RemoveMemberships" asp-route-studentId="@Model.Students.First().StudentId" asp-route-communityId="@item.CommunityId">Unregister</a>
+                </td>
+            }
+            else
+            {
+                <td>
+                    <a asp-action="AddMemberships" asp-route-studentId="@Model.Students.First().StudentId" asp-route-communityId="@item.CommunityId">Register</a>
+                </td>
+            }
+        </tr>
+
+    }
+
+</table>
